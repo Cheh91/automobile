@@ -6,19 +6,222 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
-    <link rel="stylesheet" href="css/icomoon.css">
-    <link href="https://fonts.googleapis.com/css2?family=Forum&family=Jura&display=swap" rel="stylesheet">
+    <!-- <link rel="stylesheet" href="css/icomoon.css"> -->
+    <!-- <link href="https://fonts.googleapis.com/css2?family=Forum&family=Jura&display=swap" rel="stylesheet"> -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/libs.min.css">
     <link rel="stylesheet" href="css/style.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.4.0/animate.min.css">
 </head>
 
 <body>
-    <header>
-
+    <header class="header">
+        <div class="container">
+            <div class="header__wrapper">
+                <div class="header__main">
+                    <a class="header__logo" href="#"><img src="img/header-logo.svg"></a>
+                    <nav class="header__menu">
+                        <ul>
+                            <li><a class="header__menu-link" href="#">Дизайн</a></li>
+                            <li><a class="header__menu-link" href="#">Характеристики</a></li>
+                            <li><a class="header__menu-link" href="#">Дилерская сеть</a></li>
+                            <li><a class="header__menu-link" href="#">Тест-драйв</a></li>
+                        </ul>
+                    </nav>
+                </div>
+                <a href="tel:08001227031" class="header__phone">0 800 12 270 31</a>
+                <button class="header__menu-btn"></button>
+            </div>
+        </div>
     </header>
+    <section class="top">
+        <div class="container">
+            <div class="top__wrapper">
+                <div class="top__item">
+                    <h1 class="top__item-title">Land Cruiser</h1>
+                    <p class="top__item-text">Поражающий внешний облик и впечатляющая функциональность</p>
+                    <a class="top__item-btn" href="#">Тест-драйв</a>
+                    <a class="top__item-scroll" href="#"></a>
+                </div>
+                <div class="top__video">
+                    <a href="#">Смотреть видео</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="info">
+        <div class="container">
+            <div class="info__wrapper">
+                <img class="info__image " src="img/tab-1.jpg" alt="">
+                <img class="info__image hidden" src="img/tab-2.jpg" alt="">
+                <div class="info__text">
+                    <h2 class="info__text-title">Комфорт в деталях</h2>
+                    <h2 class="info__text-title hidden">Притягивает взгляды</h2>
+                    <ul class="info__text-list">
+                        <li><button class="button info__text-list-btn info__text-list-btn-active">Дизайн салона</button>
+                        </li>
+                        <li><button class="button info__text-list-btn">Дизайн кузова</button></li>
+                    </ul>
+                    <ul class="info__text-item">
+                        <li class="info__text-descr">
+                            <p>Контурная подсветка в передних и задних дверях создает в салоне автомобиля уютную и
+                                расслабляющую обстановку. Хрустальные детали встроены в рукоятку рычага селектора,
+                                регулятор громкости. Панорамная стеклянная крыша дарит ощущение невероятного простора
+                                днем, а в ночное время создает в салоне особую атмосферу.</p>
+                            <button class="info__text-item-btn button">— Узнать больше</button>
+                        </li>
+                        <li class="info__text-descr hidden">
+                            <p>Контурная подсветка в передних и задних дверях создает в салоне автомобиля уютную и
+                                расслабляющую обстановку. Хрустальные детали встроены в рукоятку рычага селектора,
+                                регулятор громкости. Панорамная стеклянная крыша дарит ощущение невероятного простора
+                                днем, а в ночное время создает в салоне особую атмосферу.</p>
+                            <button class="info__text-item-btn button">— Узнать больше</button>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <ul class="info__photo">
+                <li class="info__photo-item">
+                    <img src="img/tab-item-1.jpg" alt="">
+                    <img src="img/tab-item-2.jpg" alt="">
+                    <img src="img/tab-item-3.jpg" alt="">
+                    <img src="img/tab-item-4.jpg" alt="">
+                </li>
+                <li class="info__photo-item hidden">
+                    <img src="img/tab-item-3.jpg" alt="">
+                    <img src="img/tab-item-1.jpg" alt="">
+                    <img src="img/tab-item-4.jpg" alt="">
+                    <img src="img/tab-item-2.jpg" alt="">
+                </li>
+            </ul>
+
+        </div>
+    </section>
+    <section class="feature">
+        <div class="container">
+            <div class="feature__wrapper">
+                <img src="img/accordeon-block.jpg" alt="">
+                <ul class="accordeon">
+                    <h2 class="info__text-title">Технические характеристики</h2>
+                    <li class="accordeon__item">
+                        <h3 class="accordeon__item-title open">Спецификация</h3>
+                        <ul>
+                            <li>
+                                <span>Максимальная скорость</span>
+                                <span> 180км/ч</span>
+                            </li>
+                            <li>
+                                <span>Расход топлива</span>
+                                <span> 9,7 л.</span>
+                            </li>
+                            <li>
+                                <span>Веса</span>
+                                <span> 2,400 кг</span>
+                            </li>
+                            <li>
+                                <span>Разгон до сотни</span>
+                                <span> 4.8 секунды</span>
+                            </li>
+                            <li>
+                                <span>Привод</span>
+                                <span> Полный</span>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="accordeon__item">
+                        <h3 class="accordeon__item-title">Двигатель</h3>
+                        <ul class="hidden">
+                            <li>
+                                <span>Двигатель</span>
+                                <span> Бензиновый</span>
+                            </li>
+                            <li>
+                                <span>Мощность</span>
+                                <span> 450 л. с.</span>
+                            </li>
+                            <li>
+                                <span>Крутящий момент двигателя</span>
+                                <span> 650 Н·м</span>
+                            </li>
+                            <li>
+                                <span>Объём двигателя</span>
+                                <span> 4395 см3</span>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="accordeon__item">
+                        <h3 class="accordeon__item-title">Ходовые качества</h3>
+                        <ul class="hidden">
+                            <li>
+                                <span>Дорожный просвет</span>
+                                <span> 212 мм</span>
+                            </li>
+                            <li>
+                                <span>Антиблокировочная система</span>
+                                <span> ABS</span>
+                            </li>
+                            <li>
+                                <span>Система стабилизации</span>
+                                <span> ESP</span>
+                            </li>
+                            <li>
+                                <span>Система помощи при спуске</span>
+                                <span> +</span>
+                            </li>
+                            <li>
+                                <span>Система помощи при трогании в гору</span>
+                                <span> +</span>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="accordeon__item">
+                        <h3 class="accordeon__item-title">Комфорт</h3>
+                        <ul class="hidden">
+                            <li>
+                                <span>Климат-контроль</span>
+                                <span> +</span>
+                            </li>
+                            <li>
+                                <span>Бортовой компьютер</span>
+                                <span> +</span>
+                            </li>
+                            <li>
+                                <span>Датчик света и дождя</span>
+                                <span> +</span>
+                            </li>
+                            <li>
+                                <span>Мультимедиа с сенсорным экраном</span>
+                                <span> Apple CarPlay и Android Auto</span>
+                            </li>
+                            <li>
+                                <span>Регулировка сиденья водителя по высоте</span>
+                                <span> +</span>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+    <section class="contacts">
+        <div class="container">
+            <div class="contacts__wrapper">
+                <div class="contacts__form">
+                    <h2 class="info__text-title">Заявка на тест-драйв</h2>
+                    <p>Оставьте свои контакты. Мы свяжемся с вами и пригласим на тест-драйв в удобное для вас время</p>
+                    <form>
+                        <input class="input" type="text" name="name" placeholder="Имя">
+                        <input class="input" type="mail" name="mail" placeholder="Электронная почта">
+                        <input class="input" type="text" name="phone" placeholder="Телефон">
+                        <button class="contacts__form-button" type="submit">Отправить</button>
+                    </form>
+                </div>
+                <img src="img/contact.jpg" alt="">
+            </div>
+        </div>
+    </section>
     <footer>
-        
+
     </footer>
 
 
