@@ -4,6 +4,7 @@
 
 
 
+
 *,
 *::after,
 *::before {
@@ -243,8 +244,14 @@ body {
     &__image {
         // width: 750px;
         width: 50%;
-        object-fit: contain;
         margin-right: 50px;
+        display: none;
+        max-height: 505px;
+        object-fit: cover;
+        
+        &.active{
+            display: block;
+        }
         @media(max-width: 1023px){
             width: 35%;
         }
@@ -264,8 +271,12 @@ body {
         &-title {
             font-size: 48px;
             margin-bottom: 40px;
+            display: none;
             @media(max-width: 499px){
                 font-size: 34px;
+            }
+            &.active{
+                display: block;
             }
         }
         &-list {
@@ -285,6 +296,12 @@ body {
                 color: #fff;
             }
         }
+        &-descr{
+            display: none;
+            &.active{
+                display: block;
+            }
+        }
         &-descr p{
             font-size: 16px;
             line-height: 24px;
@@ -297,7 +314,7 @@ body {
     }
     &__photo{
         &-item{
-            display: flex;
+            display: none;
             justify-content: space-between;
             @media(max-width: 767px){
                 flex-wrap: wrap;
@@ -311,6 +328,9 @@ body {
                 @media(max-width: 499px){
                     width: 100%;
                 }
+            }
+            &.active{
+                display: flex;
             }
         }
     }

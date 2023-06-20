@@ -6,13 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
-    <!-- <link rel="stylesheet" href="css/icomoon.css"> -->
-    <!-- <link href="https://fonts.googleapis.com/css2?family=Forum&family=Jura&display=swap" rel="stylesheet"> -->
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/libs.min.css">
     <link rel="stylesheet" href="css/style.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.4.0/animate.min.css">
 </head>
+
 
 <body>
     <header class="header">
@@ -22,7 +19,7 @@
                     <a class="header__logo" href="#"><img src="img/header-logo.svg"></a>
                     <nav class="header__menu">
                         <ul>
-                            <li><a class="header__menu-link" href="#">Дизайн</a></li>
+                            <li><a class="header__menu-link" href="#design">Дизайн</a></li>
                             <li><a class="header__menu-link" href="#">Характеристики</a></li>
                             <li><a class="header__menu-link" href="#">Дилерская сеть</a></li>
                             <li><a class="header__menu-link" href="#">Тест-драйв</a></li>
@@ -49,49 +46,52 @@
             </div>
         </div>
     </section>
-    <section class="info">
+    <section class="info" id="design">
         <div class="container">
             <div class="info__wrapper">
-                <img class="info__image " src="img/tab-1.jpg" alt="">
-                <img class="info__image hidden" src="img/tab-2.jpg" alt="">
+                <img class="info__image active" src="img/tab-1.jpg" alt="">
+                <img class="info__image" src="img/tab-2.jpg" alt="">
                 <div class="info__text">
-                    <h2 class="info__text-title">Комфорт в деталях</h2>
-                    <h2 class="info__text-title hidden">Притягивает взгляды</h2>
+                    <h2 class="info__text-title active">Комфорт в деталях</h2>
+                    <h2 class="info__text-title">Притягивает взгляды</h2>
                     <ul class="info__text-list">
                         <li><button class="button info__text-list-btn info__text-list-btn-active">Дизайн салона</button>
                         </li>
                         <li><button class="button info__text-list-btn">Дизайн кузова</button></li>
                     </ul>
                     <ul class="info__text-item">
-                        <li class="info__text-descr">
+                        <li class="info__text-descr active">
                             <p>Контурная подсветка в передних и задних дверях создает в салоне автомобиля уютную и
                                 расслабляющую обстановку. Хрустальные детали встроены в рукоятку рычага селектора,
                                 регулятор громкости. Панорамная стеклянная крыша дарит ощущение невероятного простора
                                 днем, а в ночное время создает в салоне особую атмосферу.</p>
                             <button class="info__text-item-btn button">— Узнать больше</button>
                         </li>
-                        <li class="info__text-descr hidden">
-                            <p>Контурная подсветка в передних и задних дверях создает в салоне автомобиля уютную и
-                                расслабляющую обстановку. Хрустальные детали встроены в рукоятку рычага селектора,
-                                регулятор громкости. Панорамная стеклянная крыша дарит ощущение невероятного простора
-                                днем, а в ночное время создает в салоне особую атмосферу.</p>
+                        <li class="info__text-descr">
+                            <p>
+                                Широкий. Динамичный. Мускулистый. Обновлённый BMW X6 сочетает в себе солиддность серии X
+                                со спортивным купе. Решительная передняя часть с широкими воздухозаборниками
+                                недвусмысленно намекает на то, какая мощь скрыта под капотом. Большая двойная решётка
+                                радиатора спортивной формы подччёркивает атлетичность автомобиля. Усиливают впечатление
+                                фирменные двойные фары BMW и широко раставленные противотуманные фары.
+                            </p>
                             <button class="info__text-item-btn button">— Узнать больше</button>
                         </li>
                     </ul>
                 </div>
             </div>
             <ul class="info__photo">
-                <li class="info__photo-item">
+                <li class="info__photo-item active">
                     <img src="img/tab-item-1.jpg" alt="">
                     <img src="img/tab-item-2.jpg" alt="">
                     <img src="img/tab-item-3.jpg" alt="">
                     <img src="img/tab-item-4.jpg" alt="">
                 </li>
-                <li class="info__photo-item hidden">
-                    <img src="img/tab-item-3.jpg" alt="">
-                    <img src="img/tab-item-1.jpg" alt="">
-                    <img src="img/tab-item-4.jpg" alt="">
-                    <img src="img/tab-item-2.jpg" alt="">
+                <li class="info__photo-item">
+                    <img src="img/tab-item-5.jpg" alt="">
+                    <img src="img/tab-item-6.jpg" alt="">
+                    <img src="img/tab-item-7.jpg" alt="">
+                    <img src="img/tab-item-8.jpg" alt="">
                 </li>
             </ul>
 
@@ -227,9 +227,9 @@
 
 
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script> -->
     <script src="js/main.js"></script>
-    <script src="js/libs.min.js"></script>
+    <!-- <script src="js/libs.min.js"></script> -->
 </body>
 
 </html>
