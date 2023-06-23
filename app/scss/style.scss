@@ -336,9 +336,9 @@ body {
     }
 }
 
-.hidden {
-    display: none;
-}
+// .hidden {
+//     display: none;
+// }
 
 .feature{
     padding: 100px 0px;
@@ -387,16 +387,24 @@ body {
                 top: 50%;
                 right: 0px;
                 transform: translateY(-50%);
+                transition: all .7s;
             }
             &.open{
                 &:after{
                     top: 35%;
                     transform: rotate(180deg);
+                    transition: all .7s;
                 }
             }
         }
-        ul{
-
+        &-content{
+            overflow: hidden;
+            max-height: 200px;
+            transition: max-height .7s;
+            &.hidden{
+                max-height: 0px;
+                transition: max-height .7s;
+            }
         }
         ul li{
             display: flex;

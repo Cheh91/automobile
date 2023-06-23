@@ -87,7 +87,36 @@ window.addEventListener("DOMContentLoaded", () => {
     });
 
 
-    
+
+    const accordionTitle = document.querySelectorAll(".accordeon__item-title"),
+          accordionContent = document.querySelectorAll(".accordeon__item-content");
+
+    accordionTitle.forEach((item, i) => {
+        item.addEventListener("click", (e) => {
+
+            const elem = item.nextElementSibling;
+
+            if(!elem.classList.contains("hidden")){
+                elem.classList.add("hidden");
+            } else {
+                accordionContent.forEach(elem => {
+                    elem.classList.add("hidden");
+                });
+                accordionContent[i].classList.remove("hidden");
+            }
+            
+            if(item.classList.contains("open")){
+                item.classList.remove("open");
+            } else {
+                accordionTitle.forEach(x => {
+                    x.classList.remove("open");
+                });
+                accordionTitle[i].classList.add("open");
+            }
+
+        });
+
+    });
     
 
 });
