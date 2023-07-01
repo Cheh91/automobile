@@ -110,11 +110,13 @@ body {
             left: 50%;
             transition: top .5s;
         }
+        @media(max-width: 500px){
+            left: 35%;
+        }
         &.open{
             @media(max-width: 767px){
                 position: absolute;
                 top: -15px;
-                left: 50%;
             }
         }
         ul {
@@ -150,7 +152,7 @@ body {
 }
 
 .top {
-    padding: 100px 0px;
+    padding: 50px 0px;
     @media(max-width: 767px){
         padding-bottom: 50px;
     }
@@ -229,16 +231,18 @@ body {
 }
 
 .info {
-    padding: 100px 0px;
+    padding: 50px 0px;
     @media(max-width: 767px){
         padding: 50px 0px;
     }
     &__wrapper {
         display: flex;
         margin-bottom: 70px;
-        @media(max-width: 767px){
+        @media(max-width: 900px){
             margin-bottom: 30px;
+            flex-direction: column-reverse;
         }
+
     }
 
     &__image {
@@ -255,8 +259,12 @@ body {
         @media(max-width: 1023px){
             width: 35%;
         }
+        @media(max-width: 900px){
+            width: 50%;
+        }
         @media(max-width: 767px){
-            display: none;
+            width: 100%;
+            margin-right: 0px;
         }
     }
 
@@ -265,8 +273,9 @@ body {
         @media(max-width: 1023px){
             width: 65%;
         }
-        @media(max-width: 767px){
+        @media(max-width: 900px){
             width: 100%;
+            margin-bottom: 20px;
         }
         &-title {
             font-size: 48px;
@@ -341,7 +350,7 @@ body {
 // }
 
 .feature{
-    padding: 100px 0px;
+    padding: 50px 0px;
     &__wrapper{
         display: flex;
         img{
@@ -417,7 +426,7 @@ body {
 }
 
 .contacts{
-    padding: 100px 0px;
+    padding: 50px 0px;
     display: flex;
     &__wrapper{
         display: flex;
@@ -436,29 +445,6 @@ body {
         p{
             margin-bottom: 50px;
         }
-        input{
-            display: block;
-            width: 100%;
-            background: none;
-            padding-left: 14px;
-            padding-bottom: 9px;
-            border: none;
-            border-bottom: 2px solid rgba(255,255,255,0.25);
-            color: #fff;
-            opacity: 0.8;
-            margin-bottom: 20px;
-            font-size: 20px;
-            outline: none;
-        }
-        &-button{
-            background: #E8223A;
-            color: #fff;
-            font-size: 18px;
-            line-height: 55px;
-            padding: 0 50px;
-            border: none;
-            margin-top: 40px;
-        }
     }
     img{
         width: 60%;
@@ -467,6 +453,86 @@ body {
             width: 100%;
             margin-bottom: 40px;
         }
+    }
+}
+
+input{
+    display: block;
+    width: 100%;
+    background: none;
+    padding-left: 14px;
+    padding-bottom: 9px;
+    border: none;
+    border-bottom: 2px solid rgba(255,255,255,0.25);
+    color: #fff;
+    opacity: 0.8;
+    margin-bottom: 20px;
+    font-size: 20px;
+    outline: none;
+}
+.form-button{
+    background: #E8223A;
+    color: #fff;
+    font-size: 18px;
+    line-height: 55px;
+    padding: 0 50px;
+    border: none;
+    margin-top: 40px;
+    cursor: pointer;
+}
+
+
+.modal{
+    display: none;
+    &__overlay{
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(0,0,0,0.5);
+        width: 100%;
+        height: 100%;
+    }
+    &__wrapper{
+        padding: 55px;
+        border: 1px solid #fff;
+        max-width: 600px;
+        width: 100%;
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background: #000;
+        overflow: auto;
+        max-height: 100%;
+    }
+    &__close{
+        position: absolute;
+        right: 15px;
+        top: 15px;
+        width: 30px;
+        height: 30px;
+        background: url(../img/close.svg);
+        background-size: contain;
+        background-position: center;
+        background-repeat: no-repeat;
+        border: none;
+        cursor: pointer;
+    }
+    &__title{
+        margin-bottom: 20px;
+    }
+    &__text{
+        font-size: 16px;
+        margin-bottom: 30px;
+    }
+    &__form-btn{
+        margin-top: 10px;
+        padding: 0 25px;
+    }
+    &.open{
+        display: block;
     }
 }
 

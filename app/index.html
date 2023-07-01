@@ -20,9 +20,9 @@
                     <nav class="header__menu">
                         <ul>
                             <li><a class="header__menu-link" href="#design">Дизайн</a></li>
-                            <li><a class="header__menu-link" href="#">Характеристики</a></li>
+                            <li><a class="header__menu-link" href="#feature">Характеристики</a></li>
                             <li><a class="header__menu-link" href="#">Дилерская сеть</a></li>
-                            <li><a class="header__menu-link" href="#">Тест-драйв</a></li>
+                            <li><a class="header__menu-link" href="#test-drive">Тест-драйв</a></li>
                         </ul>
                     </nav>
                 </div>
@@ -38,7 +38,7 @@
                     <h1 class="top__item-title">Land Cruiser</h1>
                     <p class="top__item-text">Поражающий внешний облик и впечатляющая функциональность</p>
                     <a class="top__item-btn" href="#">Тест-драйв</a>
-                    <a class="top__item-scroll" href="#"></a>
+                    <a class="top__item-scroll" href="#test-drive"></a>
                 </div>
                 <div class="top__video">
                     <a href="#">Смотреть видео</a>
@@ -50,8 +50,8 @@
         <div class="container">
             <div class="info__wrapper">
                 <!-- <div class="info__image-wrapper"> -->
-                    <img class="info__image active" src="img/tab-1.jpg" alt="">
-                    <img class="info__image" src="img/tab-2.jpg" alt="">
+                <img class="info__image active" src="img/tab-1.jpg" alt="">
+                <img class="info__image" src="img/tab-2.jpg" alt="">
                 <!-- </div> -->
                 <div class="info__text">
                     <h2 class="info__text-title active">Комфорт в деталях</h2>
@@ -99,7 +99,7 @@
 
         </div>
     </section>
-    <section class="feature">
+    <section class="feature" id="feature">
         <div class="container">
             <div class="feature__wrapper">
                 <img src="img/accordeon-block.jpg" alt="">
@@ -205,7 +205,7 @@
             </div>
         </div>
     </section>
-    <section class="contacts">
+    <section class="contacts" id="test-drive">
         <div class="container">
             <div class="contacts__wrapper">
                 <div class="contacts__form">
@@ -215,7 +215,7 @@
                         <input class="input" type="text" name="name" placeholder="Имя">
                         <input class="input" type="mail" name="mail" placeholder="Электронная почта">
                         <input class="input" type="text" name="phone" placeholder="Телефон">
-                        <button class="contacts__form-button" type="submit">Отправить</button>
+                        <button class="form-button" type="submit">Отправить</button>
                     </form>
                 </div>
                 <img src="img/contact.jpg" alt="">
@@ -225,6 +225,20 @@
     <footer>
 
     </footer>
+
+    <div class="modal">
+        <div class="modal__overlay"></div>
+        <div class="modal__wrapper">
+            <button class="modal__close"></button>
+            <h2 class="modal__title">Подробное описание комплектаций</h2>
+            <p class="modal__text">Оставьте адресс электронной почты, на который хотите получить документ с описанием комплектаций</p>
+            <form action="">
+                <input class="input" type="text" name="name" placeholder="Имя">
+                <input class="input" type="mail" name="mail" placeholder="Электронная почта">
+                <button class="modal__form-btn form-button" type="submit">Отправить</button>
+            </form>
+        </div>
+    </div>
 
 
 
