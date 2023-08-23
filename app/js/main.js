@@ -175,7 +175,7 @@ window.addEventListener("DOMContentLoaded", () => {
     //                 tabPhotoGalleryActive(i);
     //             }
     //         })
-            
+
     //     });
 
     // }
@@ -206,18 +206,19 @@ window.addEventListener("DOMContentLoaded", () => {
         tabInActiveItem();
 
         const tabActiveItem = (i) => {
-                tabBtn[i].classList.add("info__text-list-btn-active");
-                tabText[i].classList.add("active");
-                tabImage[i].classList.add("active");
-                tabPhotoGallery[i].classList.add("active");
-                tabTitle[i].classList.add("active");
+            tabBtn[i].classList.add("info__text-list-btn-active");
+            tabText[i].classList.add("active");
+            tabImage[i].classList.add("active");
+            tabPhotoGallery[i].classList.add("active");
+            tabTitle[i].classList.add("active");
         }
         tabActiveItem(0);
 
-        
+
         tabBtnParrent.addEventListener("click", (e) => {
             tabBtn.forEach((item, i) => {
-                if(e.target == item){
+                console.log(e.target);
+                if (e.target == item) {
                     tabInActiveItem();
                     tabActiveItem(i);
                 }
@@ -228,11 +229,11 @@ window.addEventListener("DOMContentLoaded", () => {
     tabSection();
 
 
-    
+
     const accordionSection = () => {
 
         const accordionTitle = document.querySelectorAll(".accordeon__item-title"),
-              accordionContent = document.querySelectorAll(".accordeon__item-content");
+            accordionContent = document.querySelectorAll(".accordeon__item-content");
 
         accordionTitle.forEach((item, i) => {
             item.addEventListener("click", (e) => {
@@ -325,6 +326,134 @@ window.addEventListener("DOMContentLoaded", () => {
         });
     }
     scroll();
+
+
+
+    // const topText = document.querySelector(".top__item-text");
+
+    // let xhr = new XMLHttpRequest();
+
+    // xhr.open("GET", "https://jsonplaceholder.typicode.com/posts");
+
+    // xhr.send();
+
+    // xhr.onload = function(){
+
+    //     if(xhr.status == 200){
+    //         // console.log(xhr.response);
+    //         let data = JSON.parse(xhr.response);
+
+    //         data.forEach((item, arr) => {
+    //             if(arr == 5){
+    //                 const textItem = item.title;
+    //                 // console.log(textItem);
+    //                 topText.textContent = textItem;
+    //             };
+    //         })
+    //     } else {
+    //         // console.log("Ошибка");
+    //     }
+    // }
+
+
+   
+
+
+    const message = {
+        loading: "Загрузка",
+        success: "Спасибо! Скоро мы с вами свяжемся",
+        error: "Что то пошло не так"
+    }
+
+
+    const contactsForm = document.querySelectorAll("form");
+
+    contactsForm.forEach(form => {
+        
+        form.addEventListener("submit", (e) => {
+            e.preventDefault();
+
+            let formData = new FormData(form);
+            const object = {};
+
+            formData.forEach((value, key) => {
+                // console.log(value);
+                object[key] = value;
+                
+            });
+            console.log(object);
+
+            const json = JSON.stringify(object);
+            // console.log(json);
+
+            const newMessage = document.createElement("div");
+            newMessage.classList.add("new-message");
+            form.append(newMessage);
+            form.reset();
+
+            const xhr = new XMLHttpRequest();
+            
+
+            xhr.open("POST", "https://jsonplaceholder.typicode.com/posts");
+
+
+            xhr.send(json);
+
+            xhr.onload = function(){
+                if(xhr.status === 200 || xhr.status === 201){
+                    console.log(JSON.parse(xhr.responseText));
+                    newMessage.textContent = message.success;
+                    newMessage.style.color = "green";
+                    setTimeout(() => {
+                        newMessage.remove();
+                    }, 5000);
+                } else {
+                    console.log("Ошибка сервера");
+                    newMessage.textContent = message.error;
+                    newMessage.style.color = "red";
+                    setTimeout(() => {
+                        newMessage.remove();
+                    }, 5000);
+                    
+                }
+            }
+
+        });
+
+    });
+
+
+
+ 
+
+
+    
+
+
+
+
+    // const data = {
+    //     name: "Sanya"
+    // }
+
+    // xhr.open("POST", "https://jsonplaceholder.typicode.com/posts");
+    // xhr.send(JSON.stringify(data));
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 });
