@@ -328,7 +328,7 @@ window.addEventListener("DOMContentLoaded", () => {
     scroll();
 
 
-
+    // Методом - XMLHttpRequest()
     // const topText = document.querySelector(".top__item-text");
 
     // let xhr = new XMLHttpRequest();
@@ -356,88 +356,137 @@ window.addEventListener("DOMContentLoaded", () => {
     // }
 
 
-   
-
-
-    const message = {
-        loading: "Загрузка",
-        success: "Спасибо! Скоро мы с вами свяжемся",
-        error: "Что то пошло не так"
-    }
-
-
-    const contactsForm = document.querySelectorAll("form");
-
-    contactsForm.forEach(form => {
-        
-        form.addEventListener("submit", (e) => {
-            e.preventDefault();
-
-            let formData = new FormData(form);
-            const object = {};
-
-            formData.forEach((value, key) => {
-                // console.log(value);
-                object[key] = value;
-                
-            });
-            console.log(object);
-
-            const json = JSON.stringify(object);
-            // console.log(json);
-
-            const newMessage = document.createElement("div");
-            newMessage.classList.add("new-message");
-            form.append(newMessage);
-            form.reset();
-
-            const xhr = new XMLHttpRequest();
-            
-
-            xhr.open("POST", "https://jsonplaceholder.typicode.com/posts");
-
-
-            xhr.send(json);
-
-            xhr.onload = function(){
-                if(xhr.status === 200 || xhr.status === 201){
-                    console.log(JSON.parse(xhr.responseText));
-                    newMessage.textContent = message.success;
-                    newMessage.style.color = "green";
-                    setTimeout(() => {
-                        newMessage.remove();
-                    }, 5000);
-                } else {
-                    console.log("Ошибка сервера");
-                    newMessage.textContent = message.error;
-                    newMessage.style.color = "red";
-                    setTimeout(() => {
-                        newMessage.remove();
-                    }, 5000);
-                    
-                }
-            }
-
-        });
-
-    });
 
 
 
- 
-
-
-    
-
-
-
-
-    // const data = {
-    //     name: "Sanya"
+    // const message = {
+    //     loading: "Загрузка",
+    //     success: "Спасибо! Скоро мы с вами свяжемся",
+    //     error: "Что то пошло не так"
     // }
 
-    // xhr.open("POST", "https://jsonplaceholder.typicode.com/posts");
-    // xhr.send(JSON.stringify(data));
+
+    // const contactsForm = document.querySelectorAll("form");
+
+    // contactsForm.forEach(item => {
+    //     // console.log(item);
+
+    //     item.addEventListener("submit", (e) => {
+    //         e.preventDefault();
+
+    //         let inputItem = item.querySelectorAll("input");
+    //         console.log(inputItem);
+
+    //         let formData = new FormData(item);
+    //         const object = {};
+
+    //         formData.forEach((value, key) => {
+    //             object[key] = value;
+
+    //         });
+    //         console.log(object);
+
+    //         const json = JSON.stringify(object);
+    //         // console.log(json);
+
+    //         const newMessage = document.createElement("div");
+    //         newMessage.classList.add("new-message");
+    //         item.append(newMessage);
+    //         item.reset();
+
+
+    //         const xhr = new XMLHttpRequest();
+
+    //         xhr.open("POST", "https://jsonplaceholder.typicode.com/posts");
+    //         xhr.setRequestHeader('Content-Type', 'application/json');
+
+
+    //         xhr.send(json);
+
+    //         xhr.onload = function(){
+                
+    //             if(xhr.status === 200 || xhr.status === 201){
+    //                 console.log(JSON.parse(xhr.responseText));
+    //                 newMessage.textContent = message.success;
+    //                 newMessage.style.color = "green";
+    //                 setTimeout(() => {
+    //                     newMessage.remove();
+    //                 }, 5000);      
+    //             } else {
+    //                 console.log("Ошибка сервера");
+    //                 newMessage.textContent = message.error;
+    //                 newMessage.style.color = "red";
+    //                 setTimeout(() => {
+    //                     newMessage.remove();
+    //                 }, 5000);
+    //             }
+    //         }
+    //     });
+    // });
+
+
+
+// Методом - fetch
+
+const message = {
+    load: "Загрузка",
+    successful: "Спасибо, скоро мы с вами свяжемся",
+    error: "Ошибка"
+}
+
+const contactsform = document.querySelectorAll("form");
+
+contactsform.forEach(item => {
+    item.addEventListener("submit", (e) => {
+        e.preventDefault();
+
+        let formInfo = document.createElement("div");
+        formInfo.classList.add("form-info");
+        // formInfo.innerText = message.successful;
+        item.append(formInfo);
+
+        const formData = new FormData(item);
+        let object = {};
+
+
+        formData.forEach((value, key) => {
+            object[key] = value;
+        });
+        console.log(object);
+
+        const json = JSON.stringify(object);
+        // console.log(json);
+
+
+        fetch("https://jsonplaceholder.typicode.com/posts", {
+            method: "POST",
+            headers: {
+                "Content-type": "application/json"
+            },
+            body: json
+        }).then(response => response.json())
+          .then(json => {
+            console.log(json);
+            formInfo.innerText = message.successful;
+            setTimeout(() => {
+                formInfo.remove();
+            }, 3000);
+        }).catch(() => {
+            formInfo.innerText = message.error;
+            setTimeout(() => {
+                formInfo.remove();
+            }, 3000);
+        }).finally(() => {
+            item.reset();
+        })
+
+    });
+})
+
+
+
+
+
 
 
 
